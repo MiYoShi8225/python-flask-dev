@@ -17,10 +17,13 @@ class Human:
     
     def __bool__(self):
         return True if self.age >= 20 else False
+    
+    def __len__(self):
+        return len(self.name)
 
 man = Human('Jiro', 18, '0801111111')
 man2 = Human('Jiro', 22, '0801111111')
-man3 = Human('Taro', 22, '0901111111')
+man3 = Human('Taro!', 22, '0901111111')
 print(man) #オブジェクト情報ではなくて、strのリターンで返される'human'が返される
 
 print(man == man2) #eqの情報を参照して←の式のbooleanを返す。
@@ -32,3 +35,6 @@ print(man == man2) #eqの情報を参照して←の式のbooleanを返す。
 set_men = {man, man2, man3}
 for x in set_men:
     print(x)
+
+print(len(man))
+print(len(man3))
